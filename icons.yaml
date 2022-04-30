@@ -1,0 +1,23 @@
+- name: telegram
+  color: 0088CC
+
+- name: github
+  color: 2D333B
+
+- name: instagram
+  color: C13584
+
+- name: twitter
+  color: 1DA1F2
+
+- name: facebook
+  color: 1877F2
+
+- name: reddit
+  color: ff4500
+
+- name: vkontakte
+  color: 45668E
+
+- name: anilist
+  color: 1E2630
