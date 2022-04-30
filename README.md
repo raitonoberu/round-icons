@@ -4,14 +4,14 @@
 <h4>A set of round icons with a simple unified style.</h4>
 <br>
 <!-- Add your icon here (1) -->
-<img src="32/telegram.png">
-<img src="32/github.png">
-<img src="32/instagram.png">
-<img src="32/twitter.png">
-<img src="32/facebook.png">
-<img src="32/reddit.png">
-<img src="32/vkontakte.png">
-<img src="32/anilist.png">
+<img src="48/telegram.png">
+<img src="48/github.png">
+<img src="48/instagram.png">
+<img src="48/twitter.png">
+<img src="48/facebook.png">
+<img src="48/reddit.png">
+<img src="48/vkontakte.png">
+<img src="48/anilist.png">
 
 </div>
 
