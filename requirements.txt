@@ -1,2 +1,2 @@
-pillow
+pycairo
 pyyaml

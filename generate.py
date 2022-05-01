@@ -1,4 +1,5 @@
-from PIL import Image, ImageDraw
+from math import pi
+import cairo
 import yaml
 import sys
 import os
@@ -7,34 +8,29 @@ SIZES = [512, 256, 128, 64, 48, 32]
 OFFSET = 0.4
 
 
-def generate(logo: Image.Image, color: tuple, size: int) -> Image.Image:
-    image = Image.new("RGBA", (size, size), (255, 255, 255, 0))
+def generate(logo: cairo.ImageSurface, color: tuple, size: int) -> cairo.ImageSurface:
+    surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, size, size)
+    cr = cairo.Context(surface)
 
-    circle = Image.new("RGBA", (size * 4, size * 4), (255, 255, 255, 0))
-    circle_draw = ImageDraw.Draw(circle)
-    circle_draw.ellipse((0, 0, size * 4, size * 4), fill=color)
-    circle = circle.resize((size, size), resample=Image.Resampling.LANCZOS)
+    cr.set_source_rgb(*color)
+    cr.arc(size / 2, size / 2, size / 2, 0, 2 * pi)
+    cr.fill()
 
-    image.paste(circle)
-
-    offset = int(size / 2 * OFFSET)
-
-    logo = logo.resize([int(size - offset * 2), int(size - offset * 2)])
-
-    left_corner = (
-        offset + int(size - offset * 2 - logo.size[0]),
-        offset + int(size - offset * 2 - logo.size[1]),
+    cr.translate(size / 2 * OFFSET, size / 2 * OFFSET)
+    cr.scale(
+        size / logo.get_width() * (1 - OFFSET), size / logo.get_height() * (1 - OFFSET)
     )
-    image.paste(logo, left_corner, logo.convert("RGBA"))
 
-    return image
+    cr.set_source_surface(logo)
+    cr.paint()
+
+    return surface
 
 
-def save(img: Image.Image, name: str, size: int) -> None:
+def save(img: cairo.ImageSurface, name: str, size: int) -> None:
     if not os.path.exists(str(size)):
         os.makedirs(str(size))
-    img = img.convert("P", palette=Image.Palette.ADAPTIVE, colors=256)
-    img.save(f"{size}/{name}.png", optimize=True)
+    img.write_to_png(f"{size}/{name}.png")
 
 
 if __name__ == "__main__":
@@ -45,8 +41,8 @@ if __name__ == "__main__":
         if names and name not in names:
             continue
 
-        logo = Image.open(f"logos/{name}.png")
-        color = tuple(bytes.fromhex(icon["color"]))
+        logo = cairo.ImageSurface.create_from_png(f"logos/{name}.png")
+        color = [c / 255 for c in bytes.fromhex(icon["color"])]
         for size in SIZES:
             img = generate(logo, color, size)
             save(img, name, size)
