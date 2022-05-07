@@ -21,3 +21,6 @@
 
 - name: anilist
   color: 1E2630
+
+- name: lastfm
+  color: d51007

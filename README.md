@@ -12,6 +12,7 @@
 <img src="48/reddit.png">
 <img src="48/vkontakte.png">
 <img src="48/anilist.png">
+<img src="48/lastfm.png">
 
 </div>
 
@@ -27,7 +28,7 @@ https://raw.githubusercontent.com/raitonoberu/round-icons/master/<size>/<icon>.p
 
 <!-- Add your icon here (2) -->
 
-Icons: `telegram`, `github`, `instagram`, `twitter`, `facebook`, `reddit`, `vkontakte`, `anilist`.
+Icons: `telegram`, `github`, `instagram`, `twitter`, `facebook`, `reddit`, `vkontakte`, `anilist`, `lastfm`.
 
 Sizes: `32`, `48`, `64`, `128`, `256`, `512`.
 
