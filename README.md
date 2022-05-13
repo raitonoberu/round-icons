@@ -13,7 +13,10 @@
 <img src="48/vkontakte.png">
 <img src="48/anilist.png">
 <img src="48/lastfm.png">
-
+<img src="48/myanimelist.png">
+<img src="48/shikimori.png">
+<img src="48/steamdb.png">
+<img src="48/youtube.png">
 </div>
 
 <br>
@@ -28,7 +31,7 @@ https://raw.githubusercontent.com/raitonoberu/round-icons/master/<size>/<icon>.p
 
 <!-- Add your icon here (2) -->
 
-Icons: `telegram`, `github`, `instagram`, `twitter`, `facebook`, `reddit`, `vkontakte`, `anilist`, `lastfm`.
+Icons: `telegram`, `github`, `instagram`, `twitter`, `facebook`, `reddit`, `vkontakte`, `anilist`, `lastfm`, `myanimelist`, `shikimori`, `steamdb`, `youtube`.
 
 Sizes: `32`, `48`, `64`, `128`, `256`, `512`.
 
