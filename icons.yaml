@@ -24,3 +24,15 @@
 
 - name: lastfm
   color: d51007
+
+- name: myanimelist
+  color: 2e51a2
+  
+- name: shikimori
+  color: 1a1a1a
+   
+- name: steamdb
+  color: 0b0a0a
+  
+- name: youtube
+  color: ff0000
